@@ -12,3 +12,5 @@ def create_app():
     @app.get("/fedor")
     def get_stores():
         return {"stores": stores}
+
+    return app
