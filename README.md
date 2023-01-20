@@ -17,23 +17,34 @@ You will render your project repository, it will contain the following *initial*
 
 ![Screenshot_select-area_20230120131120](https://user-images.githubusercontent.com/68698872/213681575-72a58b47-c072-440f-a3e0-7fcbf32a04e6.png)
 ## Prepare your working environment
-Go to your project folder and git clone this repository, then activate your virtual environment.
-```
-pipenv install # create environemnt
-pipenv shell   # activate your environment
-```
-![Screenshot_select-area_20230120135529](https://user-images.githubusercontent.com/68698872/213689296-9a4e0c1c-cb8a-4ee9-a9c3-13a1178e3008.png)
+Go to your project folder and git clone this repository, then activate your virtual environment. 
+There is many ways and I use pipenv, you can use anything you want. dont forget to install required packages
 
-install required packages inside your working environment
+with pip:
 ```
-pipenv install -r requirements.txt # to install required packages
-pipenv graph                       # list installed packages
+$ python3 -m venv ./venv            # create environemnt
+$ source ./venv/bin/activate        # activate your environment
+$ pip install -r requirements.txt   # install required packages
+```
+with pipenv
+
+```
+$ pipenv install                     # create environemnt
+$ pipenv shell                       # activate your environment
+$ pipenv install -r requirements.txt # install required packages
+```
+how to list installed packages
+```
+pip freeze   # with pip
+pipenv graph # with pipenv
+```
+how to create requirements.txt
+```
+pip freeze > requirements.txt            # from pip
+pipenv run pip freeze > requirements.txt # from pipenv
 ```
 
-how to create requirements.txt from pipenv 
-```
-pipenv run pip freeze > requirements.txt
-```
+
 
 ~~pipenv install flask~~
 
