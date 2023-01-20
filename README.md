@@ -1,17 +1,19 @@
-# fedor-js
+# Boilerplate for hosting a Flask app in [render.com](https://www.render.com)
 
-## Python Virtual environment pipenv
-run this to manage your project packages
+## To run this project locally
+create a virutal environment in your project folder. (either pip or pipenv works)
 
-'''
-pipenv install 
-pipenv shell
+```
+pipenv install # create environemnt
+pipenv shell   # activate your environment
 
-pipenv install <package name>
-pipenv graph - to list installed packages
-
+pipenv install -r requirements.txt # to install required packages
+pipenv graph                       # list installed packages
+```
+how to create a requirements.txt from pipenv 
+```
 pipenv run pip freeze > requirements.txt
-'''
+```
 pipenv install flask
 
 create app.py
