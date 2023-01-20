@@ -1,4 +1,63 @@
 # Boilerplate for hosting a Flask app in [render.com](https://www.render.com)
+The aim is to get a JSON payload when accesing a URL.
+You will render your project repository, it will contain the following *initial* structure:
+
+|File|Description|
+|---------|-----|
+|.flaskenv|FLASK environment variables|
+|.gitignore|local files you dont need/want to share|
+|app.py|main app config|
+|docker-entrypoint.sh|entrypoint for rendering application|
+|Dockerfile|environment for your web service|
+|Pipfile|from local virtual environment|
+|Pipfile.lock|from local virtual environment|
+|README.md|This file|
+|requirements.txt|Python packages needed to run app|
+|settings.py|project settings, not sure I need this here|
+
+![Screenshot_select-area_20230120131120](https://user-images.githubusercontent.com/68698872/213681575-72a58b47-c072-440f-a3e0-7fcbf32a04e6.png)
+## Prepare your working environment
+Go to your project folder and git clone this repository, then activate your virtual environment.
+```
+pipenv install # create environemnt
+pipenv shell   # activate your environment
+```
+![Screenshot_select-area_20230120135529](https://user-images.githubusercontent.com/68698872/213689296-9a4e0c1c-cb8a-4ee9-a9c3-13a1178e3008.png)
+
+install required packages inside your working environment
+```
+pipenv install -r requirements.txt # to install required packages
+pipenv graph                       # list installed packages
+```
+
+how to create requirements.txt from pipenv 
+```
+pipenv run pip freeze > requirements.txt
+```
+
+~~pipenv install flask~~
+
+git push your changes to your project repository. Render will work with the last commit.
+
+
+to proceed you can register in render.com and create a new Web Service
+![Screenshot_select-area_20230120130007](https://user-images.githubusercontent.com/68698872/213679528-c5d1c3c0-174f-4649-8efa-048ba0582f8c.png)
+
+Connect your repository
+![Screenshot_select-area_20230120132843](https://user-images.githubusercontent.com/68698872/213684676-38648b45-8c2a-4302-bb78-e2f61224d7cb.png)
+
+## Build & Deploy
+In render.com, The runtime **environment** for your web service is a **Dockerfile**.
+![Screenshot_select-area_20230120125337](https://user-images.githubusercontent.com/68698872/213678389-0fe0e4ab-39f4-4dac-95b9-b6a92f518980.png)
+
+## Why a Dockerfile?
+![Screenshot_select-area_20230120130804](https://user-images.githubusercontent.com/68698872/213681085-4583feff-32cb-418b-8288-2ec9d5501156.png)
+
+A Dockerfile is a set of instructions for the virtualization of your project when being hosted. 
+
+## Still missing
+- [ ] Run Project locally
+- [ ] Add elephantSQL database
 
 ## To run this project locally
 create a virutal environment in your project folder. (either pip or pipenv works)
