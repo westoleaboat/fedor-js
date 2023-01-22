@@ -40,35 +40,6 @@ def create_app():
         name = StringField('Write your note')  # , validators=[DataRequired()])
         submit = SubmitField('Submit')
 
-    # # get list of notes
-    # @app.get('/mynotes')
-    # def get_notes():
-    #     return{"notes": list(notes.values())}
-
-    # # create a note
-    # @app.post('/mynotes')
-    # def create_note():
-    #     note_data = request.get_json()
-
-    #     if (
-    #         "name" not in note_data
-    #         or "note" not in note_data
-
-    #     ):
-    #         abort(
-    #             400, message="Bad request, Ensure 'name', and 'note' are included in the JSON payload.",
-    #         )
-    #     # check for duplicate.
-    #     # for note in notes.values():
-    #     #     if (
-    #     #         note_data["name"] == note['name']
-    #     #     ):
-    #     #         abort(400, message='Already exists.')
-
-    #     note_id = uuid.uuid4().hex
-    #     note = {**note_data, "id": note_id}
-    #     # names = {**note_data["names"]}
-    #     notes[note_id] = note
-    #     return note
+    # your URL routes are in reources/notes.py
 
     return app
