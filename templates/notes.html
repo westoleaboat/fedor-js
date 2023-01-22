@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block page_content %}
+
+<h1>This is notes </h1>
+
+{{ wtf.quick_form(form) }}
+
+<p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
+
+<h2>your notes: <br> {% if name %}{{ name }} {% else %}You have no notes {% endif %}</h2>
+
+<h2>notes list: {{ notes }}</h2>
+<h2>stores list: {{ stores }}</h2>
+
+{% endblock %}
+
+
