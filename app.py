@@ -36,9 +36,9 @@ def create_app():
 
     api.register_blueprint(NoteBlueprint)
 
-    class NameForm(FlaskForm):
-        name = StringField('Write your note')  # , validators=[DataRequired()])
-        submit = SubmitField('Submit')
+    # class NameForm(FlaskForm):
+    #     name = StringField('Write your note')  # , validators=[DataRequired()])
+    #     submit = SubmitField('Submit')
 
     # your URL routes are in reources/notes.py
 

@@ -5,15 +5,24 @@
 {% block page_content %}
 
 <h1>This is notes </h1>
-
 {{ wtf.quick_form(form) }}
 
-<p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>
+<h2>empty database: {{ empty }}</h2>
 
-<h2>your notes: <br> {% if name %}{{ name }} {% else %}You have no notes {% endif %}</h2>
 
-<h2>notes list: {{ notes }}</h2>
-<h2>stores list: {{ stores }}</h2>
+<!--h2>numer of notes: ({{ amount }}) <br> {% if jsonfile == '[]' %}You have no notes{% else %} {{ jsonfile }}{% endif %}</h2-->
+<h2>numer of notes: ({{ amount }}) <br> {% if jsonfile == '[]' %}You have no notes{% else %}
+    {% for item in data %} 
+<div>
+{{ item['id']}}
+{{ item['name'] }}<br>
+{{ item['note'] }}
+</div>
+{% endfor %}
+    {% endif %}</h2>
+<!--h2>{{ title }}</h2-->
+<!--h2>data.name = {{ name }}</h2-->
+
 
 {% endblock %}
 
